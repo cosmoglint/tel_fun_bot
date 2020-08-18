@@ -150,8 +150,8 @@ def handle(msg):
             
         elif command == 'random audio' or command == 'random music' or command == 'music':
             bot.sendMessage(chat_id,"sending")
-            a = random.choice(os.listdir(r"C:\Users\vinu\Music\collecteds"))
-            url=r"C:\Users\vinu\Music\collecteds"+"\\"+a
+            a = random.choice(os.listdir(r" "))
+            url=r""+"\\"+a
             bot.sendAudio(chat_id, url)
 
         elif '@bot' in cmd or ('/' in cmd and cmd != '/start'):
