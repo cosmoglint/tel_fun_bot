@@ -7,15 +7,9 @@ import random
 import requests
 import json
 
-ram = 558581271
-mini = -367351399
-soor = -339475858
-ayyan = 962370773
-kiddo = 575182560
-uthanda = 947821180
-ram1 = 765106731
-chatd = [ram,mini,uthanda,ram1,kiddo,ayyan,soor]
-botd = '903555004:AAEMh0BWCVbIjh2pv-yPWDC7sjo3vFZdpRI'
+
+chatd = [] #add your friends ids here or allow all acccess
+botd = '___________________________' #sub your bot id here
 #input chat id here because i dont want you stealin it
 
 def handle(msg):
@@ -29,7 +23,7 @@ def handle(msg):
         bot.sendMessage(chat_id,"Hey!, I am the bot to go to for fun and instant gratification. Type /help for list of available commands")
         #! type \"random image\" for fun and \"fun\" for actual fun or type \"limit\" for motivation. play around with other commands, good for applause and some instant gratification
 
-    if '@Therambot' in command:
+    if '@bot' in command:
         command = re.sub('@Therambot', '', command)
         command = command.strip()
         #bot.sendMessage(chat_id,"hi")
@@ -153,16 +147,14 @@ def handle(msg):
             #'https://picsum.photos/536/354', open('https://picsum.photos/536/354', 'rb')
             #a = random.choice(os.listdir(r"C:\Users\vinu\Pictures\renders"))
             bot.sendMessage(chat_id,"Bye!")
-            #bot.sendPhoto(msg['chat']['id'], (os.path.basename(r'C:\Users\vinu\Desktop\Bot\Screen_Shot_2019-06-07_at_3.40.52_PM.png'), open(r'C:\Users\vinu\Desktop\Bot\Screen_Shot_2019-06-07_at_3.40.52_PM.png')))
-            #bot.sendPhoto(chatd, open('https://picsum.photos/536/354'))
-
+            
         elif command == 'random audio' or command == 'random music' or command == 'music':
             bot.sendMessage(chat_id,"sending")
             a = random.choice(os.listdir(r"C:\Users\vinu\Music\collecteds"))
             url=r"C:\Users\vinu\Music\collecteds"+"\\"+a
             bot.sendAudio(chat_id, url)
 
-        elif '@Therambot' in cmd or ('/' in cmd and cmd != '/start'):
+        elif '@bot' in cmd or ('/' in cmd and cmd != '/start'):
             bot.sendMessage(chat_id,"sorry I don't understand")
             bot.sendSticker(chat_id, 'CAACAgIAAxkBAAIkVV4_81dWZRUwGoWvMk0x8S5-8y8QAAISAAPANk8TM7yeAS6VBzcYBA')
     else:
